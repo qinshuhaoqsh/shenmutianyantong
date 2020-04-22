@@ -1,0 +1,148 @@
+/* pages/record/record.wxss */
+.header {
+  border-top: 1rpx solid #dddddd;
+  height: 170rpx;
+  /* margin-left: 30rpx; */
+  /* border-bottom: 1rpx solid #dddddd; */
+}
+
+.title {
+  font-size: 32rpx;
+  color: #333333;
+  line-height: 92rpx;
+  text-indent: 30rpx;
+}
+
+.date {
+  margin: 0 124rpx 30rpx 124rpx;
+  height: 50rpx;
+}
+
+.date-item {
+  width: 234rpx;
+  float: left;
+  height: 48rpx;
+  line-height: 48rpx;
+  font-size: 24rpx;
+  color: #797979;
+  border: 1rpx solid #9a9a9a;
+  border-radius: 10rpx;
+  text-indent: 24rpx;
+  position: relative;
+}
+
+.to {
+  margin: 24rpx 5rpx;
+  width: 16rpx;
+  height: 7rpx;
+  background-color: #9a9a9a;
+  float: left;
+}
+
+.rl {
+  width: 27rpx;
+  height: 28rpx;
+  position: absolute;
+  top: 10rpx;
+  right: 25rpx;
+}
+
+.borderB {
+  margin-left: 30rpx;
+  /* margin-top: 80rpx; */
+  height: 1rpx;
+  background-color: #dddddd;
+  width: 720rpx;
+}
+
+.record-item {
+  margin-left: 28rpx;
+  height: 142rpx;
+  border-bottom: 1rpx solid #dddddd;
+}
+
+.imgBox {
+  margin: 20rpx 26rpx 20rpx 0;
+  width: 102rpx;
+  float: left;
+  height: 102rpx;
+  background-color: #eee;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.camareImg {
+  width: 102rpx;
+  height: 102rpx;
+}
+
+.nameAndDevice {
+  width: 379rpx;
+  overflow: hidden;
+  float: left;
+  margin: 13rpx 0;
+}
+
+.name {
+  font-size: 30rpx;
+  line-height: 60rpx;
+  height: 60rpx;
+  width: 379rpx;
+  overflow: hidden;
+  color: #433f3d;
+}
+
+.device {
+  font-size: 28rpx;
+  line-height: 54rpx;
+  height: 54rpx;
+  width: 379rpx;
+  overflow: hidden;
+  color: #999999;
+}
+
+.temperatureAndtime {
+  width: 180rpx;
+  margin: 13rpx 36rpx 13rpx 0;
+  overflow: hidden;
+  float: right;
+}
+
+.temperature {
+  width: 180rpx;
+  overflow: hidden;
+  text-align: right;
+  line-height: 60rpx;
+  height: 60rpx;
+  color: #3669fe;
+}
+
+.tError {
+  color: #ff4141;
+}
+
+.time {
+  font-size: 28rpx;
+  line-height: 54rpx;
+  height: 54rpx;
+  width: 180rpx;
+  overflow: hidden;
+  color: #999999;
+  text-align: right;
+}
+
+.noData {
+  margin-top: 250rpx;
+}
+
+.noDataImg {
+  margin: 0 259rpx 28rpx 271rpx;
+  width: 204rpx;
+  height: 195rpx;
+}
+
+.noDataText {
+  text-align: center;
+  font-size: 32rpx;
+  color: #666666;
+}

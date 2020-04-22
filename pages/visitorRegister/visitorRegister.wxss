@@ -1,0 +1,12 @@
+/* pages/visitorRegister/visitorRegister.wxss */
+.noDataImg {
+  margin: 300rpx 262rpx 28rpx 284rpx;
+  width: 204rpx;
+  height: 195rpx;
+}
+
+.noDataText {
+  text-align: center;
+  font-size: 32rpx;
+  color: #666666;
+}

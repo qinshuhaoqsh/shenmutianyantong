@@ -1,0 +1,15 @@
+<!--pages/toAdd/toAdd.wxml-->
+
+<view class="box" bindtap="bindSubmit">
+  <view class="left">
+  <image class="camareImg" src="./img/touxiang.png"></image>
+  </view>
+  <view class="right">
+  <image class="camareImg" src="./img/saoyisao.png"></image>
+  </view>
+</view>
+	<!-- <button type="primary" loading="{{loadingBtn}}" disabled="{{disabledBtn}}" class="register" bindtap="bindSubmit">扫码注册</button> -->
+	<mp-toptips msg="{{error}}" type="{{toptipType}}" show="{{showError}}" delay="{{delay}}"></mp-toptips>
+  <mp-dialog title="" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+		<view>是否注册到{{company_name}}公司门禁设备</view>
+	</mp-dialog>

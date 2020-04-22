@@ -1,0 +1,20 @@
+<!--pages/vipList/vipList.wxml-->
+<view>
+  <view class="header">
+  {{company_name}}
+  </view>
+  <view  wx:for="{{vipList}}" wx:key="index" class="vip-item">
+    <view class="vip-item-left"> 
+      <image class="camareImg" src="{{item.url}}"></image>
+    </view>
+     <view class="vip-item-name"> 
+     {{item.name}}
+    </view>
+     <view class="vip-item-phone"> 
+     {{item.phone?item.phone:''}}
+    </view>
+    <view class="vip-item-icon" wx:if="{{item.phoneBol}}" bindtap="bindToPhone" data-phone="{{item.phone}}"> 
+      <image class="camareImg" src="./img/dianhua-@3x.png"></image>
+    </view>
+  </view>
+</view>

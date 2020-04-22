@@ -1,0 +1,278 @@
+/**index.wxss**/
+
+page {
+  background-color: #f3f2fb;
+}
+
+.indexView {
+  position: relative;
+}
+
+.bg {
+  height: 395rpx;
+  width: 750rpx;
+}
+
+.weather {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 198rpx;
+  width: 750rpx;
+  overflow: hidden;
+}
+
+.address {
+  width: 440rpx;
+  height: 70rpx;
+}
+
+.addressIcon {
+  width: 24rpx;
+  height: 31rpx;
+  margin: 30rpx 12rpx 0 0;
+  float: right;
+}
+
+.addressText {
+  float: right;
+  margin-top: 25rpx;
+  font-size: 28rpx;
+  color: #d7dfff;
+  letter-spacing: 5rpx;
+}
+
+.weatherDetail {
+  float: left;
+  height: 198rpx;
+  width: 440rpx;
+}
+
+.weatherDetailTop {
+  width: 440rpx;
+  height: 83rpx;
+}
+
+.weatherP {
+  width: 56rpx;
+  height: 42rpx;
+  margin: 14rpx 13rpx 0 0;
+  float: right;
+}
+
+.shishi {
+  margin: 7rpx 0 0 0;
+  font-size: 48rpx;
+  color: #d7dfff;
+  float: right;
+}
+
+.shishiBorder {
+  width: 2rpx;
+  height: 66rpx;
+  background-color: #97b1ff;
+  margin: 1rpx 15rpx 0 15rpx;
+  float: right;
+}
+
+.weatherText {
+  float: right;
+}
+
+.duoyun {
+  margin: 1rpx 0 10rpx;
+  font-size: 24rpx;
+  color: #d7dfff;
+  letter-spacing: 5rpx;
+}
+
+.temperature {
+  font-size: 24rpx;
+  color: #d7dfff;
+  line-height: 24rpx;
+  margin-right: 15rpx;
+  float: left;
+  letter-spacing: 5rpx;
+}
+
+.weatherDetailMiddle {
+  font-size: 24rpx;
+  color: #98b2ff;
+  text-align: right;
+  margin-top: 5rpx;
+}
+
+.weatherDetailBottom {
+  line-height: 26rpx;
+  font-size: 22rpx;
+  color: #bcc9ff;
+}
+
+.header {
+  height: 270rpx;
+  width: 750rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.headerLeft {
+  float: left;
+  width: 280rpx;
+  height: 216rpx;
+}
+
+.imgBox {
+  margin: 30rpx 0 10rpx 30rpx;
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  overflow: auto;
+}
+
+.camareImg {
+  width: 130rpx;
+  height: 130rpx;
+}
+
+/* .usernameAndCompany {
+  margin: 34rpx 0 0 26rpx;
+  height: 86rpx;
+  width: 500rpx;
+  float: left;
+} */
+
+.name {
+  line-height: 34rpx;
+  font-size: 34rpx;
+  color: #ffffff;
+  margin-left: 52rpx;
+  width: 228rpx;
+  height: 34rpx;
+  overflow: hidden;
+  /* margin-bottom: 12rpx; */
+}
+
+.headerRight {
+  float: left;
+  width: 440rpx;
+  height: 216rpx;
+  margin-right: 30rpx;
+}
+
+.company {
+  font-size: 28rpx;
+  color: #9bb4ff;
+  width: 600rpx;
+  height: 34rpx;
+  overflow: hidden;
+  margin-left: 52rpx;
+}
+
+.register {
+  height: 268rpx;
+  width: 185rpx;
+  float: right;
+}
+
+.saoyisao {
+  width: 71rpx;
+  height: 66rpx;
+  margin: 39rpx 73rpx 28rpx 40rpx;
+}
+
+.plsys {
+  font-size: 30rpx;
+  line-height: 30rpx;
+  margin-right: 35rpx;
+  color: #ffffff;
+}
+
+.nav {
+  margin: 0 45rpx;
+  width: 660rpx;
+  height: 556rpx;
+  position: absolute;
+  top: 290rpx;
+  left: 0;
+  z-index: 1;
+}
+
+.nav-item {
+  float: left;
+  margin: 0 13rpx 28rpx;
+  width: 304rpx;
+  height: 250rpx;
+  background-color: #ffffff;
+  border-radius: 15rpx;
+}
+
+.nav-item-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 144rpx;
+  width: 304rpx;
+}
+
+.nav-item-icon {
+  height: 74rpx;
+}
+
+.nav-item-text {
+  text-align: center;
+  font-size: 30rpx;
+  color: #333333;
+}
+
+.box {
+  height: 250rpx;
+  width: 690rpx;
+  border: 10rpx solid rgba(0, 0, 0, .05);
+  border-radius: 5rpx;
+  line-height: 200rpx;
+}
+
+.left {
+  margin: 10rpx;
+  height: 180rpx;
+  width: 180rpx;
+  overflow: hidden;
+  float: left;
+}
+
+.left .camareImg {
+  height: 180rpx;
+  width: 180rpx;
+}
+
+.right {
+  margin: 47rpx;
+  height: 106rpx;
+  width: 106rpx;
+  overflow: hidden;
+  float: right;
+}
+
+.right .camareImg {
+  height: 106rpx;
+  width: 106rpx;
+}
+
+.saoma {
+  margin-top: 200rpx;
+  text-align: right;
+  height: 50rpx;
+  line-height: 50rpx;
+  margin-right: 20rpx;
+}
+
+.mln {
+  margin-left: 0;
+}
+
+.mrn {
+  margin-right: 0;
+}

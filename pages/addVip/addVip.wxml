@@ -1,0 +1,94 @@
+<view class="container">
+	<form bindsubmit="formSubmit" bindreset="formReset">
+		<view class="section">
+			<view class="section__title">姓名</view>
+			<input value="{{name}}" placeholder-class="placeholder" class="section_input" placeholder="请输入姓名" bindinput="bindKeyInputName" />
+		</view>
+
+		<view class="section" wx:if="{{isHasOpenId}}">
+			<view class="section__title">状态</view>
+			<text class="{{sync_status===1?'section_input success':sync_status===-1?'section_input error':'section_input'}}" >{{sync_status===1?'已通过':sync_status===-1?'同步失败':'同步中'}}</text>
+		</view>
+
+		<view class="section">
+			<view class="section__title">公司</view>
+			<text class="section_input disabled" disabled="true">{{company_name}}</text>
+		</view>
+		<!-- <view class="section">
+			<view class="section__title">人员编号:</view>
+			<input value="{{number}}" placeholder-class="placeholder" type="number" class="section_input" placeholder="please input here" bindinput="bindKeyInputNumber" />
+		</view> -->
+
+		<view class="section">
+			<view class="section__title">性别</view>
+			<picker bindchange="bindPickerChangeSex" class="{{sexList[sex]?'section_input': 'section_input placeholder'}}" value="{{sex}}" range="{{sexList}}">
+				<view class="picker">
+					{{sexList[sex]?sexList[sex]:'请选择性别'}}
+				</view>
+			</picker>
+		</view>
+
+		<view class="section" wx:if="{{visitor_from === 0}}">
+			<view class="section__title">角色</view>
+			<picker bindchange="bindPickerChangeVipGroup" class="{{vipGroupList[vipGroup]?'section_input': 'section_input placeholder'}}" range-key="title" value="{{vipGroup}}" range="{{vipGroupList}}">
+				<view class="picker">
+					{{vipGroupList[vipGroup]?vipGroupList[vipGroup].title:'请选择角色'}}
+				</view>
+			</picker>
+		</view>
+
+		<!-- <view class="section_select">
+			<view class="section__title">分组:</view>
+			<picker disabled="true" bindchange="bindPickerChangeDeviceGroup" class="{{deviceGroup.length>0?'section_select_text': 'section_select_text placeholder'}}" range-key="title" value="{{deviceGroup}}" range="{{deviceGroupList}}">
+				<view class="picker">
+					{{deviceGroup.length>0?deviceGroupTitle:'请选择设备分组，不选默认全部'}}
+				</view>
+			</picker>
+		</view> -->
+
+		<!-- <view class="section_select">
+			<view class="section__title">设备:</view>
+			<picker disabled="true" bindchange="bindPickerChangeDevice" class="{{deviceList.length?'section_select_text': 'section_select_text placeholder'}}" range-key="title" value="{{device}}" range="{{deviceList}}">
+				<view class="picker">
+					{{deviceList.length>0?deviceTitle:'请选择设备，不选默认全部'}}
+				</view>
+			</picker>
+		</view> -->
+
+		<!-- <view class="section">
+			<view class="section__title">工证号:</view>
+			<input value="{{idcard}}" placeholder-class="placeholder" type="idcard" class="section_input" placeholder="please input here" bindinput="bindKeyInputIdcard" />
+		</view> -->
+
+		<view class="section">
+			<view class="section__title">电话</view>
+			<input value="{{phone}}"  placeholder-class="placeholder" type="number" class="section_input" placeholder="请输入电话号码" bindinput="bindKeyInputPhone" />
+		</view>
+
+		<view class="section">
+			<view class="section__title">地址</view>
+			<input value="{{address}}"  placeholder-class="placeholder" class="section_input" placeholder="请输入地址" bindinput="bindKeyInputAddress" />
+		</view>
+
+		<view class="section">
+			<view class="section__title">备注</view>
+			<input value="{{more}}" placeholder-class="placeholder" class="section_input" placeholder="请输入备注" bindinput="bindKeyInputMore" />
+		</view>
+
+		<view class="sectionCamare">
+			<view class="section__title_p">上传照片</view>
+			<image class="camareImg" mode="widthFix" src="{{src}}" bindtap="takePhoto"></image>
+		</view>
+		<view>
+			<button class="buttonArea" size="default" wx:if="{{isHasOpenId}}" loading="{{loadingBtn}}" disabled="{{disabledBtn}}" bindtap="bindSubmit">保存</button>
+			<button class="buttonArea zx" size="default" wx:if="{{isHasOpenId}}" loading="{{loadingBtn}}" disabled="{{disabledBtn}}" bindtap="bindDelete">注销</button>
+			<button type="primary" class="tj" size="default" wx:else loading="{{loadingBtn}}" disabled="{{disabledBtn}}" bindtap="bindSubmit">提交</button>
+		</view>
+	</form>
+		<view class="h30"></view>
+	<mp-toptips msg="{{error}}" type="{{toptipType}}" show="{{showError}}"></mp-toptips>
+	<mp-loading type="circle" show="{{show}}"></mp-loading>
+	<mp-dialog title="" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+		<view>确定要注销吗？</view>
+	</mp-dialog>
+</view>

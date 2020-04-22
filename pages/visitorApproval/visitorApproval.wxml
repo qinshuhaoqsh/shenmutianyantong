@@ -1,0 +1,5 @@
+<!--pages/visitorApproval/visitorApproval.wxml-->
+<image class="noDataImg" src="./img/kfz.png"></image>
+<view class="noDataText">
+  正在努力开发中...
+</view>

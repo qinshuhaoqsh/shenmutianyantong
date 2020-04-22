@@ -1,0 +1,61 @@
+/* pages/vipList/vipList.wxss */
+.header {
+  font-size: 32rpx;
+  height: 32rpx;
+  border-top: 1rpx solid #dddddd;
+  padding: 26rpx 0 14rpx 30rpx;
+}
+
+.vip-item {
+  border-bottom: 1rpx solid #dddddd;
+  height: 142rpx;
+  margin-left: 28rpx;
+  text-align: left;
+}
+
+.vip-item-left {
+  height: 106rpx;
+  margin: 18rpx 26rpx 18rpx 0;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #eee;
+  width: 106rpx;
+  float: left;
+}
+
+.camareImg {
+  height: 106rpx;
+  width: 106rpx;
+}
+
+.vip-item-name {
+  line-height: 138rpx;
+  font-size: 30rpx;
+  width: 303rpx;
+  color: #433f3d;
+  float: left;
+}
+
+.vip-item-phone {
+  line-height: 138rpx;
+  font-size: 28rpx;
+  width: 200rpx;
+  float: left;
+  color: #5d5d5d;
+  text-align: right;
+}
+
+.vip-item-icon {
+  height: 38rpx;
+  margin: 49rpx 36rpx 52rpx 14rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #eee;
+  width:38rpx;
+  float: left;
+}
+
+.vip-item-icon .camareImg {
+  height: 38rpx;
+  width: 38rpx;
+}

@@ -1,0 +1,125 @@
+<view class="indexView">
+	<image class="bg" src="./img/bg.png"></image>
+	<!-- <view class="weather">
+		<view class="address">
+			<image class="addressIcon" src="./img/address.png"></image>
+			<view class="addressText" wx-if="{{weather}}">{{weather.city}}</view>
+		</view>
+		<view class="weatherDetail">
+			<view class="weatherDetailTop">
+				<image class="weatherP" src="./img/duoyun.png"></image>
+				<view class="shishi" wx-if="{{weather}}">{{weather.shishi}}</view>
+				<view class="shishiBorder" wx-if="{{weather}}"></view>
+				<view class="weatherText">
+					<view class="duoyun" wx-if="{{weather}}">{{weather.weatherDesc}}</view>
+					<view class="temperature" wx-if="{{weather}}">
+						{{weather.temperature}}
+					</view>
+					<view class="temperature" wx-if="{{weather.pm25}}">
+						PM2.5：{{weather.pm25}}
+					</view>
+				</view>
+			</view>
+			<view class="weatherDetailMiddle">
+				<text>{{solarDate}}\r\t\r\t\r\t\r\t{{lunarDate}}\r\t\r\t\r\t\r\t{{week}}</text>
+			</view>
+			<view class="weatherDetailBottom">
+				{{weather.des}}
+			</view>
+		</view>
+	</view> -->
+	<view class="header">
+		<view class="headerLeft">
+			<view class="imgBox" bindtap="bindSubmit">
+				<image class="camareImg" src="{{face_url}}" wx:if="{{isHasOpenId}}"></image>
+				<image class="camareImg" src="./img/touxiang.png" wx:else></image>
+			</view>
+			<view class="name" wx:if="{{isHasOpenId}}">
+				{{name}}
+			</view>
+		</view>
+		<view class="headerRight" wx:if="{{isHasOpenId}}">
+			<view class="address">
+				<view class="addressText" wx-if="{{weather}}">{{weather.city}}</view>
+				<image class="addressIcon" src="./img/address.png"></image>
+			</view>
+			<view class="weatherDetailTop">
+				<view class="weatherText">
+					<view class="duoyun" wx-if="{{weather}}">
+						{{weather.temperature}}
+					</view>
+					<view class="temperature" wx-if="{{weather}}">{{weather.weatherDesc}}</view>
+				</view>
+				<view class="shishiBorder" wx-if="{{weather}}"></view>
+				<view class="shishi" wx-if="{{weather}}">{{weather.shishi}}</view>
+				<image class="weatherP" wx-if="{{weather}}" src="{{weather.dayPictureUrl}}"></image>
+			</view>
+			<view class="weatherDetailMiddle">
+				<text>{{solarDate}}\r\t\r\t{{lunarDate}}\r\t\r\t{{week}}</text>
+			</view>
+		</view>
+		<view class="company" wx:if="{{isHasOpenId}}">
+			{{company_name}}
+		</view>
+		<!-- <view class="dateAndWeather" wx:if="{{isHasOpenId}}">
+			<image src="{{weather.dayPictureUrl}}" class="dayPicture"></image>
+			<view class="date">
+				<view class="date-item mln">
+					{{weather.city}}
+				</view>
+				<view class="date-item" wx-if="{{weather}}">
+					{{solarDate}}
+				</view>
+				<view class="date-item" wx-if="{{weather}}">
+					{{lunarDate}}
+				</view>
+				<view class="date-item mrn" wx-if="{{weather}}">
+					{{week}}
+				</view>
+			</view>
+			<view class="date">
+				<view class="weather-item mln" wx-if="{{weather}}">
+					天气：{{weather.weatherDesc}}
+				</view>
+				<view class="borderWeather"></view>
+				<view class="weather-item" wx-if="{{weather}}">
+					气温：{{weather.temperature}}
+				</view>
+				<view class="borderWeather"></view>
+				<view class="weather-item mrn" wx-if="{{weather}}">
+					pm2.5：{{weather.pm25}}
+				</view>
+			</view>
+			<view class="date">
+				<view class="weather-item mln" wx-if="{{weather}}">
+					{{weather.des}}
+				</view>
+			</view>
+		</view> -->
+		<view class="register" bindtap="bindSubmitAdd" wx:else>
+			<image class="saoyisao" src="./img/saoyisao.png"></image>
+			<view class="plsys">
+				请扫码注册
+			</view>
+		</view>
+	</view>
+	<view class="nav">
+		<view wx:for="{{iconList}}" wx:key="index" data-id="{{index}}" class="nav-item" bindtap="bindLink">
+			<view class="nav-item-box">
+				<image class="nav-item-icon" mode="heightFix" src="{{item.src}}"></image>
+			</view>
+			<view class="nav-item-text">
+				{{item.text}}
+			</view>
+		</view>
+	</view>
+	<!-- <button type="primary" loading="{{loadingBtn}}" disabled="{{disabledBtn}}" class="register" bindtap="bindSubmit">{{isHasOpenId?'编辑vip':'注册vip'}}</button> -->
+	<mp-toptips msg="{{error}}" type="{{toptipType}}" show="{{showError}}" delay="{{delay}}"></mp-toptips>
+	<mp-loading type="circle" show="{{show}}"></mp-loading>
+	<mp-dialog title="" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+		<view>当前账号未注册,请扫码注册</view>
+	</mp-dialog>
+	<mp-dialog title="" show="{{dialogShow1}}" bindbuttontap="tapDialogButton1" buttons="{{buttons}}">
+		<view>是否注册到{{company_name}}公司门禁设备</view>
+	</mp-dialog>
+</view>

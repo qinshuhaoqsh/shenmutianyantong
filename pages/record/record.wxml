@@ -1,0 +1,59 @@
+<!--pages/record/record.wxml-->
+<view>
+	<view class="header">
+		<view class="title">
+			查询时段：
+		</view>
+		<view class="date">
+			<view class="date-item">
+				<picker mode="date" value="{{startDate}}" data-date="start" start="{{startStart}}" end="{{startEnd}}" bindchange="bindDateChange">
+					<view class="picker">
+						{{startDate}}
+					</view>
+				</picker>
+				<image src="./img/rl@3x.png" class="rl"></image>
+			</view>
+			<view class="to">
+			</view>
+			<view class="date-item">
+				<picker mode="date" value="{{endDate}}" data-date="end" start="{{endStart}}" end="{{endEnd}}" bindchange="bindDateChange">
+					<view class="picker">
+						{{endDate}}
+					</view>
+				</picker>
+				<image src="./img/rl@3x.png" class="rl"></image>
+			</view>
+		</view>
+		<view class="borderB" wx:if="{{recordList.length===0}}"></view>
+	</view>
+	<view wx:if="{{recordList.length>0}}">
+		<view class="record-item" wx:for="{{recordList}}" wx:key="index">
+			<view class="imgBox">
+				<image class="camareImg" src="{{item.face_url}}"></image>
+			</view>
+			<view class="nameAndDevice">
+				<view class="name">
+					{{item.vip_name}}
+				</view>
+				<view class="device">
+					{{item.device_name}}
+				</view>
+			</view>
+			<view class="temperatureAndtime">
+				<view class="{{item.temperature>=37.3?'temperature tError':'temperature'}}">
+					{{item.temperature}}
+				</view>
+				<view class="time">
+					{{item.discern_time}}
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="noData" wx:else>
+		<image class="noDataImg" src="./img/zwsj.png">
+		</image>
+		<view class="noDataText">
+			暂无数据...
+		</view>
+	</view>
+</view>
