@@ -1,7 +1,0 @@
-{
-  "usingComponents": {
-      "mp-loading": "../../components/loading/loading",
-      "mp-toptips": "../../components/toptips/toptips",
-      "mp-dialog": "../components/dialog/dialog"
-  }
-}

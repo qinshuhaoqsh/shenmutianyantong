@@ -55,9 +55,9 @@ page {
 }
 
 .weatherP {
-  width: 56rpx;
-  height: 42rpx;
-  margin: 14rpx 13rpx 0 0;
+  width: 60rpx;
+  height: 64rpx;
+  margin: 7rpx 13rpx 0 0;
   float: right;
 }
 
@@ -91,7 +91,6 @@ page {
   font-size: 24rpx;
   color: #d7dfff;
   line-height: 24rpx;
-  margin-right: 15rpx;
   float: left;
   letter-spacing: 5rpx;
 }

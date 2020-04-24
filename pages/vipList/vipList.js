@@ -19,6 +19,7 @@ Page({
   onLoad: function (options) {
     this.getVipList();
   },
+  //获取通信录列表
   getVipList: function () {
     wx.showLoading({
       title: '加载中',
@@ -68,13 +69,15 @@ Page({
   onReady: function () {
 
   },
+
+  //打电话
   bindToPhone: function (e) {
     wx.makePhoneCall({
-      phoneNumber: e.currentTarget.dataset.phone //仅为示例，并非真实的电话号码
+      phoneNumber: e.currentTarget.dataset.phone
     })
   },
   /**
-   * 生命周期函数--监听页面显示
+   * 生命周期函数--监听页面显示s
    */
   onShow: function () {
 

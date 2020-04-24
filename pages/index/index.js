@@ -1,10 +1,8 @@
-//index.js
-//获取应用实例
 import md5 from '../../utils/md5.js';
 // 引用百度地图微信小程序JSAPI模块 
 const bmap = require('../../utils/bmap.js');
 const util = require('../../utils/util.js');
-const lunar = require('../../utils/lunar.js');
+const calendar = require('../../utils/calendar.js');
 const app = getApp();
 Page({
   data: {
@@ -48,7 +46,8 @@ Page({
     solarDate: util.formSolarDate(new Date()) + '',
     weather: null
   },
-  onLaunch: function () {},
+  onLaunch: function () { },
+  //获取vip信息
   getVipDetail: function () {
     const _this = this;
     let obj1 = {
@@ -101,6 +100,7 @@ Page({
       }
     })
   },
+  //获取access_key
   getAccessKey: function () {
     let obj1 = {
       action: 'detail',
@@ -127,6 +127,7 @@ Page({
       }
     })
   },
+  // 扫码确认
   tapDialogButton1(e) {
     if (e.detail.index === 1) {
       this.setData({
@@ -141,7 +142,7 @@ Page({
       })
     }
   },
-
+  //开启扫码
   tapDialogButton(e) {
     if (e.detail.index === 1) {
       this.setData({
@@ -154,6 +155,7 @@ Page({
       })
     }
   },
+  //获取天气信息
   getWeather: function () {
     const _this = this;
     wx.getSetting({
@@ -161,7 +163,7 @@ Page({
         if (res.authSetting['scope.userLocation']) {
           wx.getLocation({
             type: 'wgs84',
-            success(res) {}
+            success(res) { }
           })
         } else {
           wx.authorize({
@@ -169,7 +171,7 @@ Page({
             success() {
               wx.getLocation({
                 type: 'wgs84',
-                success() {}
+                success() { }
               })
             }
           });
@@ -203,13 +205,17 @@ Page({
       }
     });
   },
+  //页面加载 登录
   onLoad: function (options) {
-    const _this = this,
-      _date = new Date(),
-      lunarDate = lunar.Lunar.toLunar(_date.getFullYear(), _date.getMonth() + 1, _date.getDate());
+    const _this = this;
+    let _date = new Date(),
+      year = _date.getFullYear(),
+      month = _date.getMonth() + 1 > 10 ? _date.getMonth() + 1 : '0' + Number(_date.getMonth() + 1),
+      day = _date.getDate() > 10 ? _date.getDate() : '0' + getDate(),
+      str = year + '-' + month + '-' + day,
+      nongli = calendar.getLunarDateString(calendar.getLunarDate(str));
     _this.setData({
-      // lunarDate: lunarDate[3]+ '年'+lunarDate[5]+lunarDate[6]
-      lunarDate: lunarDate[5] + lunarDate[6]
+      lunarDate: nongli.month + '月' + nongli.day
     })
     this.getWeather();
     wx.showLoading({
@@ -349,6 +355,7 @@ Page({
       })
     }
   },
+  //跳转
   bindLink: function (e) {
     if (this.data.isHasOpenId) {
       wx.navigateTo({
@@ -360,19 +367,15 @@ Page({
       })
     }
   },
+  //扫码结果处理
   bindSubmitAdd: function () {
     const _this = this;
     wx.scanCode({
       success(res) {
         if (decodeURIComponent(res.path)) {
           if (decodeURIComponent(res.path).split('=')[1]) {
+            //防止跳转错误
             if (decodeURIComponent(res.path).split('=')[1].indexOf("(") > -1 && decodeURIComponent(res.path).split('=')[1].indexOf(")") > -1) {
-              // _this.setData({
-              //   error: '正在读取二维码信息，请稍后',
-              //   showError: true,
-              //   toptipType: 'success',
-              //   delay: 1000
-              // })
               const scene = decodeURIComponent(res.path).split('=')[1].split('(')[1].split(')')[0];
               let deepcamInfo = {
                 ...app.globalData.deepcamInfo

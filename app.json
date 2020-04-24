@@ -5,7 +5,6 @@
     "pages/addVip/addVip",
     "pages/record/record",
     "pages/vipList/vipList",
-    "pages/toAdd/toAdd",
     "pages/visitorRegister/visitorRegister",
     "pages/visitorApproval/visitorApproval"
   ],  

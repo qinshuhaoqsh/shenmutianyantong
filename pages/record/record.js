@@ -37,6 +37,7 @@ Page({
     })
     this.getRecordList(true)
   },
+  //获取识别记录
   getRecordList: function (flag) {
     wx.showLoading({
       title: '加载中',
@@ -90,6 +91,7 @@ Page({
   onReady: function () {
 
   },
+  //日期变化处理
   bindDateChange: function (e) {
     if (e.currentTarget.dataset.date === 'start') {
       this.setData({

@@ -2,8 +2,6 @@
 .header {
   border-top: 1rpx solid #dddddd;
   height: 170rpx;
-  /* margin-left: 30rpx; */
-  /* border-bottom: 1rpx solid #dddddd; */
 }
 
 .title {
